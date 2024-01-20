@@ -1,0 +1,33 @@
+1) inicializar um projeto node
+abre o power sheel e digita:
+npm init --yes
+
+2)  instalar o cypress
+npm install -d cypress
+
+3)instalando o cypress utilizando uma versão especifica
+npm install -d cypress@12.5.0 
+
+4)12
+
+Model for VSCode editor
+
+C:\Program Files\nodejs
+C:\Program Files\nodejs\node_modules\npm\bin
+Search PATH environment variable.
+Add the above paths into the Environment variables (both user variable path and system variable path).
+Restart VSCode.
+Open a new terminal in VSCode
+run node --version output should equal v16.13.0
+
+5) npx cypress open 
+
+6) no arquivo cypress.config.js é o arquivo de configuração do cypress
+
+7) na pasta e2e ficam os arquivos de testes
+
+8) na pasta fixtures tem os scripts que geram dados para serem utilizados nos testes 
+
+9) na pasta support é para arquivos auxiliares
+
+10) INSTALAR A EXTENSÃO ES6 MOCHA Snippets
