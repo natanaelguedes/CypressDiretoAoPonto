@@ -9,9 +9,12 @@ describe('Transações', () => {
      //beforeEach  executa um codigo antes de cada teste
      //afterEach executa  um codigo depois de cada teste
 
+    beforeEach(() => {
+        cy.visit("https://devfinance-agilizei.netlify.app/#")
+
+    }); 
      
     it('Cadastrar uma entrada', () => {
-        cy.visit("https://devfinance-agilizei.netlify.app/#")
 
         criarTransacao("Freela",250)
       //  criarTransacao("Freela do Finde",250)
@@ -32,9 +35,8 @@ describe('Transações', () => {
 
     //it.skip('Cadastrar uma saída', () => {
    //pula este passo     it.skip('', () => {
-            cy.visit("https://devfinance-agilizei.netlify.app/#")
-
-            criarTransacao("Cinema",-45,50)
+ 
+            criarTransacao("Cinema",-45)
             // codigo abaixo verifica se é Cinema
             cy.get('tbody tr .description').should("have.text", "Cinema")
 

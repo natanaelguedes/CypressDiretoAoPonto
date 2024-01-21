@@ -1,5 +1,5 @@
 
-//describe é um agrupador de funcionalidades
+///describe é um agrupador de funcionalidades
 
 describe('Transações', () => {
     it('Cadastrar uma entrada', () => {

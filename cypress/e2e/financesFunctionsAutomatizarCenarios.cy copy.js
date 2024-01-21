@@ -34,7 +34,7 @@ describe('Transações', () => {
    //pula este passo     it.skip('', () => {
             cy.visit("https://devfinance-agilizei.netlify.app/#")
 
-            criarTransacao("Cinema",-45,50)
+            criarTransacao("Cinema",-45)
             // codigo abaixo verifica se é Cinema
             cy.get('tbody tr .description').should("have.text", "Cinema")
 
