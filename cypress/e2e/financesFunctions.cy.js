@@ -1,0 +1,46 @@
+
+//describe é um agrupador de funcionalidades
+
+describe('Transações', () => {
+    it('Cadastrar uma entrada', () => {
+        cy.visit("https://devfinance-agilizei.netlify.app/#")
+
+        criarTransacao("Freela",250)
+      ///  criarTransacao("Freela do Finder",250)
+        // cy.contains("Nova Transação").click()
+        
+        // //type é utilizado para entrada de texto em formulário
+        // cy.get('#description').type("Freela")
+        // cy.get('#amount').type(2050)
+        // cy.get('#date').type(`2023-02-20`)
+        
+        // cy.contains('button',"Salvar").click()
+        cy.get('tbody tr .description').should("have.text", "Freela")
+
+    });
+
+    it('Cadastrar uma saída', () => {
+
+    //it.skip('Cadastrar uma saída', () => {
+   //pula este passo     it.skip('', () => {
+            cy.visit("https://devfinance-agilizei.netlify.app/#")
+
+            criarTransacao("Cinema",-45,50)
+            // codigo abaixo verifica se é Cinema
+            cy.get('tbody tr .description').should("have.text", "Cinema")
+
+        });
+    }); 
+
+function criarTransacao(descricao, valor){
+    cy.contains("Nova Transação").click()
+       //type é utilizado para entrada de texto em formulário
+       cy.get('#description').type(descricao)
+       cy.get('#amount').type(valor)
+       cy.get('#date').type(`2023-02-20`)
+       
+       //cy.contains('button',"Salvar").click()
+       //cy.get('tbody tr .description').should("have.text", "Freela")
+       cy.contains('button',"Salvar").click()
+
+}    
