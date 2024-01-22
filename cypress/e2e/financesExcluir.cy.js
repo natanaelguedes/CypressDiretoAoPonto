@@ -42,7 +42,18 @@ describe('Transações', () => {
             cy.get('tbody tr .description').should("have.text", "Cinema")
 
         });
-    }); 
+    
+     it('Excluir transação', () => {
+        criarTransacao("Freela",100)
+        cy.contains(".description", "Freela")
+        .parent().find("img").click()
+     });   
+    
+    
+    });
+    
+    
+    
 //
 function criarTransacao(descricao, valor){
     cy.contains("Nova Transação").click()
