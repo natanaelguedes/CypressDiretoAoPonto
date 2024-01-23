@@ -31,3 +31,6 @@ run node --version output should equal v16.13.0
 9) na pasta support é para arquivos auxiliares
 
 10) INSTALAR A EXTENSÃO ES6 MOCHA Snippets
+
+11) executar os testes sem mostrar a interface para isso utilizamos o comando:
+npx cypress run  
