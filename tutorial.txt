@@ -33,4 +33,5 @@ run node --version output should equal v16.13.0
 10) INSTALAR A EXTENSÃO ES6 MOCHA Snippets
 
 11) executar os testes sem mostrar a interface para isso utilizamos o comando:
-npx cypress run  
+npx cypress run  este comando gera uma pasta videos, que mostram tudo o que aconteceu nos testes
+que foram executados
