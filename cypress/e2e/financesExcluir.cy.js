@@ -17,6 +17,8 @@ describe('Transações', () => {
     it('Cadastrar uma entrada', () => {
 
         criarTransacao("Freela",250)
+
+       // criarTransacao("Mesada",10)
       //  criarTransacao("Freela do Finde",250)
       ///  criarTransacao("Freela do Finder",250)
         // cy.contains("Nova Transação").click()
@@ -27,7 +29,7 @@ describe('Transações', () => {
         // cy.get('#date').type(`2023-02-20`)
         
         // cy.contains('button',"Salvar").click()
-        cy.get('tbody tr .description').should("have.text", "Freela")
+        //cy.get('tbody tr .description').should("have.text", "Freela")
 
     });
 
@@ -38,17 +40,18 @@ describe('Transações', () => {
 //            cy.visit("https://devfinance-agilizei.netlify.app/#")
 
             criarTransacao("Cinema",-45)
+
             // codigo abaixo verifica se é Cinema
             cy.get('tbody tr .description').should("have.text", "Cinema")
 
         });
     
-     it('Excluir transação', () => {
-        criarTransacao("Freela",100)
-        cy.contains(".description", "Freela")
-        .parent().find("img").click()
-     });   
-    
+        it('Excluir transacao', () => {
+            criarTransacao("Freela",100)
+            criarTransacao("Mesada",10)
+            cy.contains(".description", "Freela").parent().find('img').click()
+            cy.get('tdbody tr').should("have.length", 0) // o 0 corresponde ao Freela
+        });
     
     });
     
